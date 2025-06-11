@@ -1,0 +1,162 @@
+/* Reset and font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Background image from LinkedIn */
+body {
+  background: url("https://media.licdn.com/dms/image/v2/D5603AQFLxgiNGjJSXg/profile-displayphoto-shrink_200_200/B56ZaZiO9eGUAY-/0/1746332611599?e=2147483647&v=beta&t=A0vy3rhMrsndRSeNroo2KOg9bf0QQWE82HtSAB_wnK4") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay for readability */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* Container and content styles (same as before) */
+.container {
+  background: rgba(31, 31, 56, 0.9);
+  width: 400px;
+  max-width: 90vw;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  padding: 40px 35px;
+  text-align: center;
+}
+
+/* Other CSS stays the same */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #e0e0ff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+ul {
+  list-style-type: none;
+  background: #ff4c60;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(255, 76, 96, 0.5);
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0);}
+  20%, 60% {transform: translateX(-10px);}
+  40%, 80% {transform: translateX(10px);}
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+  display: block;
+  color: #b0b0e0;
+}
+
+input[type="text"] {
+  padding: 12px 15px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1rem;
+  color: #333;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 15px 3px #7a64f6;
+  transform: scale(1.03);
+}
+
+input[type="submit"] {
+  background: #7a64f6;
+  color: white;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  letter-spacing: 1.5px;
+  box-shadow: 0 5px 15px rgba(122, 100, 246, 0.6);
+}
+
+input[type="submit"]:hover {
+  background: #5d47b1;
+  transform: scale(1.05);
+}
+
+h2 {
+  background: #393971;
+  padding: 20px 15px;
+  border-radius: 20px;
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #d1d1ff;
+  box-shadow: 0 8px 20px rgba(57, 57, 113, 0.8);
+}
+
+a {
+  margin-top: 25px;
+  display: inline-block;
+  color: #a8a8f8;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media(max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 30px 25px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  input[type="submit"] {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}

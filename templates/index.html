@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MITS InternAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <div class="container">
+    <h1>Student Success Predictor</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="error">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="/predict" method="post">
+        <label>CGPA:</label>
+        <input type="text" name="cgpa" placeholder="Enter your CGPA">
+
+        <label>Projects:</label>
+        <input type="text" name="projects" placeholder="Number of projects done">
+
+        <label>Internships:</label>
+        <input type="text" name="internships" placeholder="Number of internships">
+
+        <label>Participation Level (0-1):</label>
+        <input type="text" name="participation" placeholder="E.g., 0.75">
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+      <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+
+    <a href="/dashboard/">View Dashboard</a>
+  </div>
+
+</body>
+</html>
